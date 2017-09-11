@@ -69,4 +69,4 @@ def classify0(inX, dataSet, labels, k):
 
 group, labels = createDataSet()
 result = classify0([2.0, 3.0], group, labels,3)
-print (result)
+print (result)                    # this is a python 2.7 code , So if you run it in python 3+ then you need to put "" to run it .
