@@ -2,11 +2,13 @@ from numpy import *
 import operator
 
 def createDataSet():
+    ''' Create the dataSet '''
     group = array([ [1.0, 2.0], [1.0,4.0], [4.0, 1.0], [4.0, 2.0] ])
     labels = ['Action', 'Action', 'Romantic', 'Romantic']
     return group, labels
 
 def calcDistance(inX, dataSet, labels, k):
+    """Calculating the Euclidean distance"""
     # shape is a tuple that gives dimensions of the array
     # shape[0] returns the number of rows, here will return 4
     # dataSet = [[1.0, 2.0], [1.0,4.0], [4.0, 1.0], [4.0, 2.0]]
@@ -41,6 +43,7 @@ def calcDistance(inX, dataSet, labels, k):
     return sortedDistIndices
 
 def findMajorityClass(inX, dataSet, labels, k, sortedDistIndices):
+    """Finding the k nearest neighbors """
     classCount = {}
     # classCount maps the lables to occurance counts i.e taking the occurance of each element in the class
 
@@ -69,4 +72,4 @@ def classify0(inX, dataSet, labels, k):
 
 group, labels = createDataSet()
 result = classify0([2.0, 3.0], group, labels,3)
-print (result)                    # this is a python 2.7 code , So if you run it in python 3+ then you need to put "" to run it .
+print (result) 
